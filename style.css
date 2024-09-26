@@ -1,4 +1,4 @@
-/* 
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,19 +16,19 @@ h3 {
 }
 
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000;
+    background-color: #000; 
     padding: 20px;
     padding-right: 10px;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
+    
 }
 
 .logo h1 {
@@ -60,59 +60,33 @@ h3 {
 .nav-links a:hover {
     color: #0099ff;
 }
-
-/* General styling for the image section */
-.about-me img {
-    max-width: 100%; /* Make sure the image doesn't exceed the width of its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin: 0 auto; /* Center the image */
-}
-
-/* Flexbox layout to align image and content side by side */
-.about-me {
+.about-me{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
 }
-
-/* Adjust content layout */
-.abt_content {
-    flex: 1;
-    margin-left: 20px;
-}
-
-/* Responsive behavior for smaller screens */
-@media (max-width: 768px) {
-    .about-me {
-        flex-direction: column; /* Stack the image and text vertically on smaller screens */
-    }
-
-    .abt_content {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .about-me img {
-        margin-bottom: 20px; /* Add space between the image and content when stacked */
-    }
+.about-me img{
+    border-radius: 40px;
+    height: 200px;
+    width: 300px;
+    padding-left: 20px;
+    padding-top: 20px;
+    box-shadow: 0 0 0px rgba(9, 9, 9, 0.2);
+    
 }
 
 
 section {
+    display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    margin: 20px 100px;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 25px;
     border-radius: 8px;
     background-color: #B2B5E0;
     text-align: center;
-    overflow: hidden; /* Prevents overflow */
+    
 }
-
-
-
 .edu_{
     display: block;
 
@@ -124,23 +98,21 @@ section {
     padding-left: 20%;
     padding-right: 20%;
 }
-.box {
+.box{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
 }
-
-.b1, .b2, .b3, .b4, .b5, .b6 {
-    flex: 1 1 200px;
-    max-width: 300px;
+.b1,.b2,.b3,.b4,.b5,.b6 {
     padding-top: 20px;
     background-color: #EFEFEF;
     text-align: center;
     height: 70px;
+    width: 300px;
+    margin: 30px;
     border-radius: 20px;
+    /* border-width: 15px; */
 }
-
 .Achievements img{
     width: 60px; 
     height: 60px;
@@ -174,176 +146,208 @@ section p{
     padding-left: 40px;
     padding-right: 40px;
     
-} 
+}
+
+/* Default for larger screens */
+.about-me {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me div {
+    width: 55%; /* Adjust width for large screens */
+}
+
+.skills {
+    display: center;
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+}
+
+/* .skills div {
+    width: 90%;
+    max-width: 400px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+} */
+
+/* .skills div:hover {
+    transform: scale(1.05);
+} */
+
+
+/* For mobile devices */
+/* For mobile devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+
+    .about-me img {
+        width: 100%; /* Responsive image */
+        height: auto;
+    }
+
+    /* Adjust section layouts for smaller screens */
+    .abt_content, .edu_info, .certification, .skills, .Projects, .Achievements, .Contact {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .box {
+        display: block;
+    }
+
+    .box section {
+        margin-bottom: 10px;
+    }
+
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me div {
+        width: 90%;
+    }
+
+    .skills div {
+        width: 20%; /* On larger screens, three blocks per row */
+    }
+}
+
+/* For larger screens (like desktops) */
+@media (min-width: 769px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+
+    .about-me img {
+        width: 50%; /* Adjust based on preference */
+    }
+
+    /* Set sections to flex layout if you want multiple columns */
+    .abt_content, .edu_info, .certification, .skills, .Projects, .Achievements, .Contact {
+        padding: 40px;
+        text-align: left;
+    }
+
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box section {
+        flex: 1 1 30%;
+        margin: 15px;
+    }
+    .skills {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .skills div {
+        width: 45%; /* On medium screens, two blocks per row */
+        margin: 15px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    
+}
+
+
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white;
 }
 
-h1 {
-    text-align: center;
-} 
-
-h3 {
+header {
+    background-color: #000000;
+    padding: 10px;
     text-align: center;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 20px;
-    padding-right: 10px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo h1 {
-    color: #CCCCFF;
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    padding-right: 30px;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
+header nav a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
+    font-size: 18px;
 
-.nav-links a:hover {
-    color: #0099ff;
 }
-
-/* General styling for the image section */
-.about-me img {
-    max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Set a max height to prevent overlap */
-    display: block;
-    margin: 0 auto; /* Center the image */
-}
-
-/* Flexbox layout to align image and content side by side */
-.about-me {
+/* header nav{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start; /* Align items to the start to avoid overlap */
-    justify-content: space-between;
+} */
+
+.project-brief {
     padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Adjust content layout */
-.abt_content {
-    flex: 1; /* Allow content to grow and fill space */
-    margin-left: 20px;
+.project-brief h1 {
+    text-align: center;
+    color: #333;
 }
 
-/* Responsive behavior for smaller screens */
+.project-brief h2 {
+    margin-top: 20px;
+    color: #000000;
+}
+.project-brief img {
+    width: 200px;
+    height: 500px;
+}
+
+/* footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+} */
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .about-me {
-        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+    .project-brief {
+        padding: 15px;
     }
 
-    .abt_content {
-        margin-left: 0;
-        text-align: center;
+    header nav a {
+        font-size: 16px;
     }
-
-    .about-me img {
-        margin-bottom: 20px; /* Add space between the image and content when stacked */
-    }
-}
-
-section {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    margin: 20px 100px;
-    border-radius: 8px;
-    background-color: #B2B5E0;
-    text-align: center;
-    overflow: hidden; /* Prevent overflow */
-}
-
-.edu_ {
-    display: block;
-}
-
-.certification ul {
-    text-align: left;
-}
-
-.certification {
-    padding-left: 20%;
-    padding-right: 20%;
-}
-
-.box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.b1, .b2, .b3, .b4, .b5, .b6 {
-    flex: 1 1 200px;
-    max-width: 300px;
-    padding-top: 20px;
-    background-color: #EFEFEF;
-    text-align: center;
-    height: 70px;
-    border-radius: 20px;
-}
-
-.Achievements img {
-    width: 60px; 
-    height: 60px;
-    border-radius: 50px;
-    display: flex;
-}
-
-.ach_block {
-    display: flex;
-}
-
-.social-icons {
-    justify-content: center; 
-    display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-.social-icons img {
-    width: 40px; 
-    height: auto;
-    border-radius: 8px;
-}
-
-.social-icons img:hover {
-    transform: scale(1.6);
-}
-
-section p {
-    text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
 }
